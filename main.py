@@ -1,4 +1,4 @@
-# game open main door hello
+# game open main door
 import pygame
 from source import tools, setup
 from source.states import main_menu, load_screen, level
