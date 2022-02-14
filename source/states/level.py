@@ -23,7 +23,7 @@ class Level1:
     def setup_player(self):
         self.player = player.Player('mario')
         self.player.rect.x = 300
-        self.player.rect.y = 300
+        self.player.rect.y = 490
 
     def update(self, surface, keys):
         self.player.update(keys)
@@ -32,6 +32,10 @@ class Level1:
 
     def update_player_position(self):
         self.player.rect.x += self.player.x_vel
+        if self.player.rect.x < 0:
+            self.player.rect.x = 0
+        if self.player.rect.x > C.SCREEN_W - 16*C.PLAYER_MULTI:
+            self.player.rect.x = C.SCREEN_W - 16*C.PLAYER_MULTI
         self.player.rect.y += self.player.y_vel
 
     def draw(self, surface):
